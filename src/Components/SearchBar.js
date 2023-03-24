@@ -9,9 +9,10 @@ export default function SearchBar() {
         <div className="search-bar">
              <AsyncPaginate 
                 placeholder = "Search for city"
-                
+                className="input"
+                debounceTimeout={800}
+                value = {search}
              />
-            {/* <input alt="Search" id="input" placeholder="Search your city"></input> */}
         </div>
     )
 };
