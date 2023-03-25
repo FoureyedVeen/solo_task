@@ -57,5 +57,10 @@ img {
     height: 150px;
     background-color: #d4d5d5;
     border-radius: 10px;
-    margin-left: 8px;
+    margin-left: 10px;
+    color: rgb(40, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }   

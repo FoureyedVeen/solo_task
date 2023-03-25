@@ -17,7 +17,7 @@ export default function Forecast() {
                     <img src={cloudIcon}></img>
                 </div>
                 <Details
-            
+                    props
                 />
            </div> 
         </div>
