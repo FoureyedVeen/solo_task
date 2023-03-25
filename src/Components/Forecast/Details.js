@@ -5,6 +5,15 @@ export default function Details(props) {
                 <h3 className="parameter--value">45</h3>
                 <span className="parameter--text">Humidity</span>
             </div>
+            <div className="parameter-row">
+                <h3 className="parameter--value">45</h3>
+                <span className="parameter--text">Humidity</span>
+            </div>
+            <div className="parameter-row">
+                <h3 className="parameter--value">45</h3>
+                <span className="parameter--text">Humidity</span>
+            </div>
+            
         </div>
     )
 }
