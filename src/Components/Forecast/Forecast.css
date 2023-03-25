@@ -1,9 +1,45 @@
 .container {
     width: 80%;
-    background-color: bisque;
     height: 40%;
     display: flex;
     justify-content: center;
     margin: auto;
     margin-top: 10px;
+}
+.parameter-box {
+    width: 100%;
+    height: auto;
+    color: #d4d5d5;
+}
+.row--1 {
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#city-name {
+    font-weight: 400;
+    font-size: 50px;
+
+}
+
+.weather-details {
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 70px;
+    background-color: green;
+    margin-left: 30px;
+}
+
+.temp {
+    font-size: 70px;
 }
