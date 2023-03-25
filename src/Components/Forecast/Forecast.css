@@ -33,13 +33,27 @@
     margin-top: 20px;
 }
 
-.weather-icon {
+img {
     width: 100px;
-    height: 70px;
-    background-color: green;
-    margin-left: 30px;
+    height: 100px;
+    background-color: #d4d5d5;
+    margin-left: 10px;
 }
 
 .temp {
     font-size: 70px;
+}
+
+.parameter-container {
+    width: 100%;
+    /* height: auto; */
+    margin-top: 40px;
+    background-color: red;
+}
+
+.parameter-row {
+    width: 150px;
+    height: 150px;
+    background-color: #d4d5d5;
+    border-radius: 10px;
 }

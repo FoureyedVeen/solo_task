@@ -1,9 +1,9 @@
 export default function Details(props) {
     return (
-        <div>
-            <div>
-                <h3 className="parameter-row">45</h3>
-                <span>Humidity</span>
+        <div className="parameter-container">
+            <div className="parameter-row">
+                <h3 className="parameter--value">45</h3>
+                <span className="parameter--text">Humidity</span>
             </div>
         </div>
     )

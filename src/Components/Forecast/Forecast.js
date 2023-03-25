@@ -1,6 +1,6 @@
 import '../Forecast/Forecast.css';
 import Details from './Details';
-import cloudIcon from '../'
+import cloudIcon from '../../images/cloudIcon.png'
 
 
 export default function Forecast() {
@@ -14,7 +14,7 @@ export default function Forecast() {
                 {/* <div>weather description</div> */}
                 <div className='weather-details'>
                     <p className='temp'>45°C</p>
-                    <img className='weather-icon'></img>
+                    <img src={cloudIcon}></img>
                 </div>
                 <Details
             
