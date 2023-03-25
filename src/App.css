@@ -4,6 +4,9 @@
     height: 600px;
     border-radius: 20px;
     box-shadow: 4px 3px 8px 3px #0000004e;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
 }
 
 .search-bar {
@@ -16,7 +19,6 @@
 }
 
 .input {
-    
     height: 40px;
     border: 0px;
     border-radius: 10px;
