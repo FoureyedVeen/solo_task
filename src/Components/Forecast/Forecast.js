@@ -1,5 +1,7 @@
 import '../Forecast/Forecast.css';
 import Details from './Details';
+import cloudIcon from '../'
+
 
 export default function Forecast() {
     return (
