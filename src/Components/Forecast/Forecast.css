@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    width: 60%;
+    height: 40px;
+    background-color: black;
+    
+}
