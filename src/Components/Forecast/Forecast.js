@@ -16,21 +16,24 @@ export default function Forecast() {
                     <p className='temp'>45°C</p>
                     <img src={cloudIcon}></img>
                 </div>
-                <Details
+                <div className='parameter-container'>
+                    <Details
                     image = ""
                     value = "45"
-                    parameter-text = "Humidity"
+                    parameter = "Humidity"
                 />
                 <Details 
                     image = ""
                     value = "46"
-                    parameter-text = "Wind"
+                    parameter = "Wind"
                 />
                 <Details 
                     image = ""
                     value = "49mm"
-                    parameter-text = "Rainfall"
+                    parameter = "Rainfall"
                 />
+                </div>
+                
            </div> 
         </div>
     )

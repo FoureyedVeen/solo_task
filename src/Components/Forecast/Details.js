@@ -1,18 +1,11 @@
 export default function Details(props) {
+    console.log(props)
     return (
         <div className="parameter-container">
             <div className="parameter-row">
                 <image></image>
-                <h3 className="parameter--value">45</h3>
-                <span className="parameter--text">Humidity</span>
-            </div>
-            <div className="parameter-row">
-                <h3 className="parameter--value">45</h3>
-                <span className="parameter--text">Humidity</span>
-            </div>
-            <div className="parameter-row">
-                <h3 className="parameter--value">45</h3>
-                <span className="parameter--text">Humidity</span>
+                <h3 >{props.value}</h3>
+                <span >{props.parameter}</span>
             </div>
             
         </div>
