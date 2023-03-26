@@ -4,10 +4,16 @@ import Forecast from './Components/Forecast/Forecast';
 import Info from './Components/Info'
 import SearchBar from './Components/SearchBar';
 
+function handleOnSearchChange(searchData){
+  console.log(searchData)
+}
+
 function App() {
   return (
     <div className="App">
-      <SearchBar />
+      <SearchBar
+        onSearchChange={handleOnSearchChange}
+      />
       <Forecast />
     </div>
   );
