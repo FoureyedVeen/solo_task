@@ -17,7 +17,19 @@ export default function Forecast() {
                     <img src={cloudIcon}></img>
                 </div>
                 <Details
-                    props
+                    image = ""
+                    value = "45"
+                    parameter-text = "Humidity"
+                />
+                <Details 
+                    image = ""
+                    value = "46"
+                    parameter-text = "Wind"
+                />
+                <Details 
+                    image = ""
+                    value = "49mm"
+                    parameter-text = "Rainfall"
                 />
            </div> 
         </div>
