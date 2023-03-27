@@ -14,7 +14,7 @@ function App() {
       <SearchBar
         onSearchChange={handleOnSearchChange}
       />
-      {/* <Forecast /> */}
+      <Forecast />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { async } from "q";
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "../Api";
@@ -6,8 +7,9 @@ import { geoApiOptions, GEO_API_URL } from "../Api";
 export default function SearchBar({onSearchChange}) {
     const [search, setSearch] = useState(null)
     
-    function loadOptions(inputValue) {
-        return fetch(
+    async function loadOptions(inputValue) {
+        console.log(inputValue)
+        fetch (
                 `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`, 
                 geoApiOptions
         )
@@ -39,7 +41,7 @@ export default function SearchBar({onSearchChange}) {
                 debounceTimeout={800}
                 value = {search}
                 onChange = {handleOnchange}
-                // loadOptions = {loadOptions}
+                loadOptions = {loadOptions}
              />
         </div>
     )
