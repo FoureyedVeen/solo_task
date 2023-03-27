@@ -8,3 +8,7 @@ export const geoApiOptions = {
 
 export const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo'
 
+
+
+// fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities', geoApiOptions)
+	
