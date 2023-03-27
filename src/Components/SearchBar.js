@@ -11,9 +11,17 @@ export default function SearchBar({onSearchChange}) {
                 `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`, 
                 geoApiOptions
         )
-        .then((response) => response.json())
-        .then((response) => console.log(response))
+        .then(response => response.json())
+        .then(response => console.log(response))
         .catch(err => console.error(err));
+            // return {
+            //     options:response.data.map((city)) => {
+            //         value: `${data.city.latitude} ${data.city.longitude}`,
+            //         label: `${response.city.name}, ${response.city.countryCode}`
+            //     };
+            // };
+        // });
+        // .catch(err => console.error(err));
     }
 
 
@@ -31,7 +39,7 @@ export default function SearchBar({onSearchChange}) {
                 debounceTimeout={800}
                 value = {search}
                 onChange = {handleOnchange}
-                loadOptions = {loadOptions}
+                // loadOptions = {loadOptions}
              />
         </div>
     )
