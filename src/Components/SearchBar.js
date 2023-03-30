@@ -1,18 +1,34 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "../Api";
+import AsyncSelect from 'react-select/async'
+
 
 
 export default function SearchBar({onSearchChange}) {
     const [search, setSearch] = useState(null)
     
-    function loadOptions(inputValue) {
+   async function loadOptions(inputValue, callback) {
         return fetch(
                 `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`, 
                 geoApiOptions
         )
         .then((response) => response.json())
-        .then((response) => console.log(response))
+        .then((response) => {
+            console.log(response.data, response)
+            if (response?.data){
+                const data=response.data.map(item =>{
+                    return{
+                        label:item.city,
+                        value: item.city
+                    }
+                })
+                callback(data)
+            } 
+           
+           
+           
+        })
         .catch(err => console.error(err));
     }
 
@@ -25,14 +41,8 @@ export default function SearchBar({onSearchChange}) {
     return (
        
         <div className="search-bar">
-             <AsyncPaginate 
-                placeholder = "Search for city"
-                className="input"
-                debounceTimeout={800}
-                value = {search}
-                onChange = {handleOnchange}
-                loadOptions = {loadOptions}
-             />
+            <AsyncSelect cacheOptions loadOptions={loadOptions} defaultOptions className="input" />
+            
         </div>
     )
 };
