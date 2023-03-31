@@ -1,7 +1,7 @@
 // import { response } from "express";
 import React, { useState } from "react";
-import AsyncSelect from 'react-select/async';
-// import { AsyncPaginate } from "react-select-async-paginate";
+// import AsyncSelect from 'react-select/async';
+import { AsyncPaginate } from "react-select-async-paginate";
 
 import { geoApiOptions, GEO_API_URL } from "../Api";
 
@@ -33,11 +33,11 @@ export default function SearchBar({onSearchChange}) {
 
          });
          console.log(newData)
-         return [];
-        //  return {
-        //     options: newData || [],
-        //     hasMore : true
-        //  }
+        //  return [];
+            return {
+                options: newData || [],
+                hasMore : true
+            }
             // return {
             //     options:response.data.map((city)) => {
             //         value: `${data.city.latitude} ${data.city.longitude}`,
@@ -50,27 +50,29 @@ export default function SearchBar({onSearchChange}) {
 
 
     function handleOnchange(searchData) {
-        
+        setSearch(searchData);
         onSearchChange(searchData);
     };
 
     return (
        
         <div className="search-bar">
-             <AsyncSelect
+             <AsyncPaginate
                 placeholder = "Search for city"
                 className="input"
                 debounceTimeout={800}
                 value = {search}
                 onChange = {handleOnchange}
-                loadOptions = {(inputValue, callBack) => {
-                    setTimeout(() => {
-                        callBack(loadOptions(inputValue));
-                      }, 1000);
-                    }
-                    // callBack(s(inputValue) || [])}}
-                }
-             />
+                loadOptions = {loadOptions}
+                // loadOptions = {(inputValue, callBack)
+                //     setTimeout(() => {
+                //     callBack(loadOptions(inputValue));
+                //     }, 1000);
+                //     }
+                // //     callBack(s(inputValue) || [])}
+                // }
+            
+            />
         </div>
     )
 };
