@@ -4,8 +4,10 @@ import AsyncSelect from 'react-select/async'
 
 
 
-export default function SearchBar({onSearchChange}) {
+export default function SearchBar({onSearchChange,setSelected,selected}) {
     const [search, setSearch] = useState(null)
+
+    // const [selected, setSelected] = useState("")
     
    async function loadOptions(inputValue, callback) {
         return fetch(
@@ -32,15 +34,24 @@ export default function SearchBar({onSearchChange}) {
     }
 
 
-    function handleOnchange(searchData) {
-        setSearch(searchData);
-        onSearchChange(searchData);
-    };
+    // function handleOnchange(searchData) {
+    //     setSearch(searchData);
+    //     onSearchChange(searchData);
+    // };
+
+    function handleNameChange(event) { 
+        setSelected(event.value)
+    }
 
     return (
        
         <div className="search-bar">
-            <AsyncSelect cacheOptions loadOptions={loadOptions} defaultOptions className="input" />
+            <AsyncSelect cacheOptions 
+                loadOptions={loadOptions} defaultOptions 
+                className="input" 
+                onChange={handleNameChange}
+                value= {{value:selected,label:selected}}
+            />
             
         </div>
     )
