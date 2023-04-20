@@ -19,5 +19,5 @@ export const ForecastApiOptions = {
 
 fetch('https://forecast9.p.rapidapi.com/rapidapi/forecast/Berlin/summary/', ForecastApiOptions)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => (response))
 	.catch(err => console.error(err));
