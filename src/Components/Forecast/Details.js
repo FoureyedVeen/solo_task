@@ -1,13 +1,13 @@
-export default function Details(props) {
+function Details(props) {
     // console.log(props)
     return (
-        <div className="parameter-container">
+        <div className="parameter-details">
             <div className="parameter-row">
-                <image></image>
-                <h3 >{props.value}</h3>
-                <span >{props.parameter}</span>
+                <div className="label">{props.label}</div>
+                <div className="value">{props.value}</div>
             </div>
             
         </div>
     )
 }
+export default Details;
