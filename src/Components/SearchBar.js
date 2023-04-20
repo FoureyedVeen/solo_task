@@ -21,10 +21,10 @@ export default function SearchBar({onSearchChange,setSelected,selected}) {
             
             console.log(response.data, response)
             if (response?.data){
-                const data = response.data.map(item =>{
+                const data = response.data.map(city =>{
                     return {
-                        value: `${item.latitude} ${item.longitude}`,
-                        label: item.name
+                        value: `${city.latitude} ${city.longitude}`,
+                        label: city.name
                     }
                     
                 })    
