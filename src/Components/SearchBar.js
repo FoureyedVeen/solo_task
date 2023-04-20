@@ -5,31 +5,48 @@ import AsyncSelect from 'react-select/async'
 
 
 export default function SearchBar({onSearchChange,setSelected,selected}) {
-    const [search, setSearch] = useState(null)
+    // const [search, setSearch] = useState(null)
 
     // const [selected, setSelected] = useState("")
     
-   async function loadOptions(inputValue, callback) {
+    
+    async function loadOptions(inputValue, callback) {
+    
         return fetch(
-                `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`, 
-                geoApiOptions
+            `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`, 
+            geoApiOptions
         )
         .then((response) => response.json())
         .then((response) => {
+            
             console.log(response.data, response)
             if (response?.data){
-                const data=response.data.map(item =>{
-                    return{
-                        label:item.city,
-                        value: item.city
+                const data = response.data.map(item =>{
+                    return {
+                        value: `${item.latitude} ${item.longitude}`,
+                        label: item.name
                     }
-                })
+                    
+                })    
                 callback(data)
-            } 
-           
-           
-           
+                console.log(data)
+            }
+            
+            
         })
+            // if (response?.data){
+            //     const data=response.data.map(item =>{
+            //         return{
+            //             label:item.city,
+            //             value: item.city
+            //         }
+            //     })
+            //     callback(data)
+            // } 
+           
+           
+           
+       
         .catch(err => console.error(err));
     }
 
@@ -40,7 +57,7 @@ export default function SearchBar({onSearchChange,setSelected,selected}) {
     // };
 
     function handleNameChange(event) { 
-        setSelected(event.value)
+        setSelected(event.label)
     }
 
     return (
