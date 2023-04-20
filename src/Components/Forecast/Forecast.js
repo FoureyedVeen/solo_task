@@ -10,7 +10,7 @@ export default function Forecast() {
     current.getMonth() + 1
   }/${current.getFullYear()}`;
   function handleOnSearchChange(searchData){
-    console.log(searchData)
+    // console.log(searchData)
   }
   
   const [selected, setSelected] = useState("")
@@ -31,7 +31,7 @@ export default function Forecast() {
           {/* <div>weather description</div> */}
           <div className="weather-details">
             <p className="temp">45°C</p>
-            <img src={cloudIcon}></img>
+            <img src={cloudIcon} alt="cloud"></img>
           </div>
           <div className="parameter-container">
             <Details image="" value="45" parameter="Humidity" />

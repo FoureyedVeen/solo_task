@@ -1,5 +1,5 @@
 export default function Details(props) {
-    console.log(props)
+    // console.log(props)
     return (
         <div className="parameter-container">
             <div className="parameter-row">
